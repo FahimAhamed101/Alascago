@@ -24,7 +24,7 @@ const Footer = () => {
             </h1>
             <ul className="flex flex-col text-center md:text-start gap-4 mt-5">
               <li>
-                <Link href="https://play.google.com/store" legacyBehavior>
+                <Link href="https://play.google.com/store">
                   <button
                     className="h-16 px-6 bg-white text-black border-black hover:bg-gray-800 rounded-lg flex items-center gap-3"
                   >
@@ -64,7 +64,7 @@ const Footer = () => {
             </h1>
             <ul className="flex flex-col gap-4 mt-5 text-center md:text-start">
               <li>
-                <Link href="https://www.apple.com/app-store/" legacyBehavior>
+                <Link href="https://www.apple.com/app-store/" >
                   <button
                     className="h-16 px-6 bg-white text-black border-black hover:bg-gray-800 rounded-lg flex items-center gap-3"
                   >

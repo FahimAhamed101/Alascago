@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "@next/font": "^14.2.15",
     "antd": "^5.25.2",
     "firebase": "^11.8.1",
+    "framer-motion": "^12.18.1",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.511.0",
