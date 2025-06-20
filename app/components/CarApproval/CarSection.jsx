@@ -96,52 +96,11 @@ const CarApprovalSection = () => {
     <div className="bg-gray-50 min-h-screen p-6">
       <div className="max-w-7xl mx-auto">
         <div className="mb-8">
-          <h1 className="text-4xl font-extrabold text-gray-900">Car Approval Dashboard</h1>
+          <h1 className="text-4xl font-extrabold text-gray-900">Car Approval</h1>
           <p className="text-gray-600 mt-2">Review and manage car submissions</p>
         </div>
 
-        {/* Tabs */}
-        <div className="mb-6 border-b border-gray-200">
-          <nav className="-mb-px flex space-x-8">
-            <button
-              onClick={() => setActiveTab('pending')}
-              className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm ${activeTab === 'pending' ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
-            >
-              <div className="flex items-center">
-                <ClockIcon className={`h-5 w-5 mr-2 ${activeTab === 'pending' ? 'text-indigo-500' : 'text-gray-400'}`} />
-                Pending Approval
-                <span className="ml-2 bg-gray-200 text-gray-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">
-                  {carData.pending.length}
-                </span>
-              </div>
-            </button>
-            <button
-              onClick={() => setActiveTab('approved')}
-              className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm ${activeTab === 'approved' ? 'border-green-500 text-green-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
-            >
-              <div className="flex items-center">
-                <CheckCircleIcon className={`h-5 w-5 mr-2 ${activeTab === 'approved' ? 'text-green-500' : 'text-gray-400'}`} />
-                Approved
-                <span className="ml-2 bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">
-                  {carData.approved.length}
-                </span>
-              </div>
-            </button>
-            <button
-              onClick={() => setActiveTab('rejected')}
-              className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm ${activeTab === 'rejected' ? 'border-red-500 text-red-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
-            >
-              <div className="flex items-center">
-                <XCircleIcon className={`h-5 w-5 mr-2 ${activeTab === 'rejected' ? 'text-red-500' : 'text-gray-400'}`} />
-                Rejected
-                <span className="ml-2 bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">
-                  {carData.rejected.length}
-                </span>
-              </div>
-            </button>
-          </nav>
-        </div>
-
+      
         {/* Car List */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {carData[activeTab].map((car) => (
@@ -165,23 +124,10 @@ const CarApprovalSection = () => {
                 </div>
                 <div className="text-sm text-gray-500 mb-2">Submitted by {car.submittedBy}</div>
                 <div className="text-xs text-gray-400">{new Date(car.submittedDate).toLocaleDateString()}</div>
-                <div className="mt-2">
-                  {activeTab === 'pending' && (
-                    <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
-                      Pending Review
-                    </span>
-                  )}
-                  {activeTab === 'approved' && (
-                    <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                      Approved
-                    </span>
-                  )}
-                  {activeTab === 'rejected' && (
-                    <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
-                      Rejected
-                    </span>
-                  )}
-                </div>
+               
+                 
+                  
+                
               </div>
             </div>
           ))}
@@ -204,7 +150,7 @@ const CarApprovalSection = () => {
 
         {/* Car Details Modal */}
         {selectedCar && (
-          <div className="fixed z-10 inset-0 overflow-y-auto">
+          <div className="fixed z-100 inset-0 overflow-y-auto">
             <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
               <div className="fixed inset-0 transition-opacity" aria-hidden="true">
                 <div className="absolute inset-0 bg-gray-500 opacity-75" onClick={closeModal}></div>
